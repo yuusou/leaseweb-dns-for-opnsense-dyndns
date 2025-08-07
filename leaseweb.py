@@ -53,7 +53,7 @@ class LeaseWeb(BaseAccount):
 
             # Use bearer (api key) authentication
             url = "https://api.leaseweb.com/hosting/v2/domains/" + self.settings.get('hostnames') + "/resourceRecordSets/" + self.settings.get('hostnames') + "/" + recordType
-            payload = "{\"content\":[\"" + self.current_address + "\"],\"ttl\":86400}"
+            payload = "{\"content\":[\"" + self.current_address + "\"],\"ttl\":3600}"
             headers = {
                 'X-LSW-Auth': self.settings.get('password'),
                 'content-type': "application/json",
